@@ -1,31 +1,31 @@
-const mongoose=require("mongoose");
+const mongoose = require("mongoose");
 
-const transationLoan=new mongoose.Schema({
+const transactionSchema = new mongoose.Schema({
     sender: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
-      },
-      receiver: {
+    },
+    receiver: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
-      },
-      amount: {
+    },
+    amount: {
         type: Number,
         required: true
-      },
-      type: {
+    },
+    type: {
         type: String,
         enum: ['loan_repayment', 'collateral_liquidation'],
         required: true
-      },
-      timestamp: {
+    },
+    timestamp: {
         type: Date,
         default: Date.now
-      }
-})
+    }
+});
 
-const Transaction= mongoose.model('Transaction',transationLoan);
+const Transaction = mongoose.model('Transaction', transactionSchema);
 
-exports.module=Transaction;
+module.exports = Transaction;

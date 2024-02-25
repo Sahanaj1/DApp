@@ -4,7 +4,6 @@ const LoanSchema=new mongoose.Schema({
     borrower: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true
       },
       lender: {
         type: mongoose.Schema.Types.ObjectId,
