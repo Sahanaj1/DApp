@@ -3,11 +3,11 @@ const router=express.Router();
 const loanController=require('../controllers/loanController');
 
 
-router.post('/create-loan',loanController.createLoan);
+router.post('/',loanController.createLoan);
 
-router.get('/get-loans',loanController.getAllLoans);
+router.get('/',loanController.getAllLoans);
 
-router.get('/get-loan/:id',loanController.getLoanById);
+router.get('/:id',loanController.getLoanById);
 
 router.put('/update-loan/:id',loanController.updateLoanById);
 
